@@ -127,6 +127,28 @@ svg {
     cursor: not-allowed;
 }
 
+#btn-reinicio {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#ffd08a, #f5951d 50%, #dd7500 51%, #ffab3d);
+    border: 1px solid #9a5200;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+
+#btn-reinicio:hover {
+    filter: brightness(1.15);
+}
+
+#btn-reinicio:active {
+    transform: translateY(2px);
+}
+
 #status {
     margin-top: 16px;
     padding: 0 24px;
