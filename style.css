@@ -1,0 +1,141 @@
+/* Feito com ajuda do Claude, pedi o que queria e pedi para explicar */
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#3a8dde, #bfe3ff 65%, #6abf3a 65%, #2f7d1f);
+    background-attachment: fixed;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #111;
+}
+
+/* Janela de programa */
+.principal {
+    width: 100%;
+    max-width: 460px;
+    padding: 0 20px 24px;
+    box-sizing: border-box;
+    background: #ece9d8;
+    border: 3px solid #0855dd;
+    border-radius: 10px 10px 4px 4px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Barra de título */
+.principal::before {
+    content: "♫ player_da_forca.exe  —  ✕";
+    display: block;
+    margin: 0 -20px;
+    padding: 8px 12px;
+    background: linear-gradient(#3c9bff, #0855dd 30%, #0763f0);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+.titulo {
+    font-size: 28px;
+    color: #0855dd;
+    text-shadow: 2px 2px 0 white;
+}
+
+/* CD girando */
+.titulo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 12px auto 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #ece9d8 0 8px, #aaa 9px 14px, transparent 15px),
+        conic-gradient(silver, #8ef, #fff, #f9f, silver, #ff9, #fff, #9f9, silver);
+    box-shadow: 0 2px 6px gray;
+    animation: girar 4s linear infinite;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+svg {
+    max-width: 100%;
+    background: white;
+    border: 2px inset silver;
+    stroke-linecap: round;
+}
+
+.sub {
+    font-weight: bold;
+}
+
+/* Visor do player */
+#digito {
+    display: block;
+    margin-top: 6px;
+    padding: 12px;
+    font-family: "Courier New", monospace;
+    font-size: 24px;
+    color: #7CFC00;
+    background: black;
+    border: 3px inset silver;
+    white-space: pre-wrap;
+}
+
+#tentativas {
+    color: #0855dd;
+}
+
+#invalidas {
+    color: #c00;
+    letter-spacing: 6px;
+}
+
+#palavra {
+    padding: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 2px solid #7f9db9;
+}
+
+#btn-confirmar {
+    padding: 8px 20px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#b6f28a, #4caf27 50%, #37911a 51%, #6fd13f);
+    border: 1px solid #2a6b14;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+
+#btn-confirmar:hover {
+    filter: brightness(1.15);
+}
+
+#btn-confirmar:disabled {
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+#status {
+    margin-top: 16px;
+    padding: 0 24px;
+    background: #ffffe1;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#status:empty {
+    display: none;
+}
